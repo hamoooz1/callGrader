@@ -1,0 +1,14 @@
+{
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0",
+    "pg": "^8.16.3",
+    "uuid": "^11.1.0"
+  },
+  "scripts": {
+    "migrate": "psql \"$DATABASE_URL\" -f migrations/000_init_schema.sql",
+    "seed": "node scripts/seed.js",
+    "setup": "npm run migrate && npm run seed"
+  }
+}
